@@ -45,8 +45,9 @@ def sheet(request):
         # pprint(api_response)
     except ApiException as e:
         print("Exception when calling ConvertDataApi->convert_data_xlsx_to_json: %s\n" % e)
-    
-    return Response(api_response)
+    print(api_response)
+
+    return JsonResponse(api_response,safe=False)
 
 
 
